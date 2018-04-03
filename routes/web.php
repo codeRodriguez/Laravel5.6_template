@@ -11,10 +11,16 @@
 |
 */
 
+// Routes public or without authentication
 Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Auth::routes();
+// Routes private or with authentication
+Route::middleware('auth')->group(function() {
+    Route::get('/home', 'HomeController@index')->name('home');
+    //
+});
+
