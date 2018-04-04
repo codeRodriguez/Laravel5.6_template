@@ -14,6 +14,7 @@ try {
     require('bootstrap');
 
     toastr = require('toastr');
+    swal = require('sweetalert2');
 } catch (e) {}
 
 /**
